@@ -1,0 +1,150 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Map method</title>
+</head>
+<body>
+    <h1>map method</h1>
+    <p>map(): Creates a new array by calling a provided function on every element in the calling array.</p>
+    <ul id="output"></ul>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const arr = [1, 2, 3];
+            const doubledArr = arr.map((element) => element * 2);
+
+            const outputList = document.getElementById("output");
+
+            // Creating an list element to display the doubled array
+            const listItem = document.createElement("li");
+            listItem.textContent = `Doubled array: ${doubledArr.join(', ')}`;
+            
+            // Appending the list element to the <ul> element
+            outputList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+<!-- <html>
+<head>
+    <title>Filter method</title>
+</head>
+<body>
+    <h1>Filter method</h1>
+    <ul id="output"></ul>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const arr = [1, 2, 3, 4, 5];
+            const filteredArr = arr.filter((element) => element % 2 === 0); // filteredArr is [2, 4]
+
+            const outputList = document.getElementById("output");
+
+            // Displaying filter array
+            outputList.innerHTML += `<li>Original Array: [${arr.join(', ')}]</li>`;
+            outputList.innerHTML += `<li>Filtered Array (even numbers): [${filteredArr.join(', ')}]</li>`;
+        });
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>every method</title>
+</head>
+<style>
+    input {
+        background-color: black;
+        color: white;
+    }
+    button {
+        background-color: blue;
+        border-radius: 20%;
+    }
+</style>
+<body>
+
+    <h1>every method</h1>
+    <p>every() returns true if all elements in an array pass a test (provided as a function).</p>
+
+
+    <p><input type="number" id="ageToCheck" value="18"></p>
+
+    <button onclick="myFunction()">click</button>
+
+    <p id="demo"></p>
+
+<script>
+    // Array of ages
+    const ages = [20, 25, 19, 28]; //output true
+    //const ages = [20, 25, 12, 28]; //output false
+
+
+    // Function to check if age is above the provided value
+    function checkAge(age) {
+        return age > document.getElementById("ageToCheck").value;
+    }
+
+    // Function to execute when the button is clicked
+    function myFunction() {
+    // Check if every age in the array is above the provided value
+        document.getElementById("demo").innerHTML = ages.every(checkAge);
+    }
+</script>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Find Method</title>
+</head>
+<body>
+    <h1>Find Method</h1>
+
+    <script>
+        // Array of numbers
+        const arr = [1, 2, 3, 4, 5];
+        
+        // Function to find the first element greater than 3
+        const found = arr.find((element) => element > 3); // found is 4
+        
+        // Display the found element
+        document.write("<p>Found element greater than 3: " + found + "</p>");
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reduce Method</title>
+</head>
+<body>
+    <h1>Reduce Method</h1>
+    <p>The reduce() method is used on the array arr. It reduces the array to a single value by applying a function to each element of the array. In this case, the function calculates the sum of all elements.</p>
+    <p>The initial value of the accumulator is provided as 0.</p>
+    <p>The result (sum) is stored in the variable sum.</p>
+    <script>
+        // Array of numbers
+        const arr = [1, 2, 3, 4, 5];
+        
+        // Function to calculate the sum of all elements in the array
+        const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0); // sum is 15
+        
+        // Display the sum
+        document.write("<p>Sum of all elements: " + sum + "</p>");
+    </script>
+</body>
+</html>
+
