@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Countdown Program</title>
+</head>
+<body>
+    <h1>Countdown Program</h1>
+    <button onclick="startCountdown()">Start Countdown</button>
+    <div id="countdown"></div>
+
+    <script>
+        // function to count down numbers to 1
+        function countDown(number) {
+            // display the number
+            document.getElementById('countdown').innerHTML += number + '<br>';
+
+            // decrease the number value
+            const newNumber = number - 1;
+
+            if (newNumber > 0) {
+                countDown(newNumber);
+            }
+        }
+
+        function startCountdown() {
+
+            document.getElementById('countdown').innerHTML = '';
+
+            countDown(4);
+        }
+    </script>
+</body>
+</html>

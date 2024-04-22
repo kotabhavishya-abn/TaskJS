@@ -1,0 +1,73 @@
+<!-- <html>
+<head>
+    <title>JavaScript Selectors</title>
+    <style>
+        .selected {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 id="title" class="selected">Welcome to JavaScript Selectors</h1>
+        <p class="selected">This is a paragraph with class "selected".</p>
+        <p>This is another paragraph without any class.</p>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </div>
+
+    <script>
+        const titleElement = document.getElementById('title');
+        const selectedElements = document.getElementsByClassName('selected');
+        const paragraphElement = document.querySelector('p');
+        const listItemElements = document.querySelectorAll('li');
+
+        titleElement.innerText = 'JavaScript Selectors (Modified)';
+        for (let element of selectedElements) {
+            element.style.color = 'blue';
+        }
+    </script>
+</body>
+</html> -->
+
+
+
+<html>
+<head>
+    <title>Parent and Child Classes</title>
+</head>
+<style>
+    
+    .parent {
+        background-color: lightblue;
+        padding: 20px;
+    }
+
+    .child {
+        color: red;
+    }
+
+</style>
+<body>
+    <div class="parent">
+        <h1 class="child">Parent and Child Classes</h1>
+        <p class="child">This is an example of using parent and child classes in HTML and JavaScript.</p>
+    </div>
+
+    <script>
+        const parentElement = document.querySelector('.parent');
+
+        const childElements = parentElement.querySelectorAll('.child');
+
+        // Change styles of child elements
+        childElements.forEach(child => {
+            child.style.fontWeight = 'bold';
+        });
+
+    </script>
+</body>
+</html>
