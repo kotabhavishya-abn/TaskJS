@@ -19,9 +19,9 @@ JavaScript is a scripting language that enables you to create dynamically updati
 * Step 2: Open the command prompt.
 * Step 3: Locate your path where the . js file is saved.
 * Step 4: To compile the .js file we have to write.
-* Node <Filename>.js.
+* Node Filename.js.
 * Step 5: Press the Enter key
-## Code
+## Sample Code
 Addition of two numbers
 ---  
      const add = (a, b) => {
