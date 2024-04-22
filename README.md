@@ -14,4 +14,19 @@ JavaScript is a scripting language that enables you to create dynamically updati
 * Client-Side Validation
 * Backend development
 
-## Installation
+## How to Run JavaScript Code
+* Step 1: Save your javascript with . js extension.
+* Step 2: Open the command prompt.
+* Step 3: Locate your path where the . js file is saved.
+* Step 4: To compile the .js file we have to write.
+* Node <Filename>.js.
+* Step 5: Press the Enter key
+**Example**
+     const add = (a, b) => {
+	     return a + b
+     }
+     console.log(add(10,5));
+**Output:** 15
+  
+console.log(add(4, 6))
+* Output:
