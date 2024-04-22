@@ -26,7 +26,4 @@ JavaScript is a scripting language that enables you to create dynamically updati
 	     return a + b
      }
      console.log(add(10,5));
-**Output:** 15
-  
-console.log(add(4, 6))
-* Output:
+** Output:15**
