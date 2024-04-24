@@ -48,31 +48,35 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const arr = [1, 2, 3, 4, 5];
-            
-            // Using map() to double each element
-            const doubledArr = arr.map((element) => element * 2);
 
-            // Using filter() to get even numbers
-            const evenNumbers = arr.filter((element) => element % 2 === 0);
+            function doubleArray(arr) {
+                return arr.map((element) => element * 2);
+            }
 
-            // Using reduce() to sum all elements
-            // The accumulator accumulates the return values of the callback function
-            const sum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+            function getEvenNumbers(arr) {
+                return arr.filter((element) => element % 2 === 0);
+            }
 
-            // Using find() to find the first element greater than 3
-            const foundElement = arr.find((element) => element > 3);
+            function sumArray(arr) {
+                return arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+            }
 
-            // Using every() to check if all elements are greater than 0
-            const allGreaterThanZero = arr.every((element) => element > 0);
+            function findFirstGreaterThan(arr, num) {
+                return arr.find((element) => element > num);
+            }
+
+            function areAllGreaterThan(arr, num) {
+                return arr.every((element) => element > num);
+            }
 
             const outputList = document.getElementById("output");
 
             // Displaying results
-            outputList.innerHTML += `<li>Doubled array: ${doubledArr.join(', ')}</li>`;
-            outputList.innerHTML += `<li>Even numbers: ${evenNumbers.join(', ')}</li>`;
-            outputList.innerHTML += `<li>Sum of all elements: ${sum}</li>`;
-            outputList.innerHTML += `<li>First element greater than 3: ${foundElement}</li>`;
-            outputList.innerHTML += `<li>Are all elements greater than 0? ${allGreaterThanZero}</li>`;
+            outputList.innerHTML += `<li>Doubled array: ${doubleArray(arr).join(', ')}</li>`;
+            outputList.innerHTML += `<li>Even numbers: ${getEvenNumbers(arr).join(', ')}</li>`;
+            outputList.innerHTML += `<li>Sum of all elements: ${sumArray(arr)}</li>`;
+            outputList.innerHTML += `<li>First element greater than 3: ${findFirstGreaterThan(arr, 3)}</li>`;
+            outputList.innerHTML += `<li>Are all elements greater than 0? ${areAllGreaterThan(arr, 0)}</li>`;
         });
     </script>
 </body>
