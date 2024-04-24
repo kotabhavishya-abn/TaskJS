@@ -1,4 +1,3 @@
-// static/script.js
 async function sendOTP() {
     const email = document.getElementById('email').value;
     const response = await fetch('/forgot-password/', {
