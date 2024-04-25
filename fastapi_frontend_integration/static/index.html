@@ -1,30 +1,31 @@
-<!-- static/index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Reset</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>Password Reset</h1>
-    <form id="passwordResetForm">
+    <div id="sendOTPSection">
+        <h1>Password Reset</h1>
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <button type="button" onclick="sendOTP()">Send OTP</button><br><br>
+        <input type="email" id="email" placeholder="Email">
 
+        <button onclick="sendOTP()">Send OTP</button>
+    </div>
+
+    <div id="enterOTPSection" style="display: none;">
+        <h1>Enter OTP and Reset Password</h1>
         <label for="otp">Enter OTP:</label>
         <input type="text" id="otp" name="otp" required><br><br>
-        
         <label for="newPassword">New Password:</label>
         <input type="password" id="newPassword" name="newPassword" required><br><br>
-
         <label for="confirmPassword">Confirm Password:</label>
         <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
-
         <button type="button" onclick="resetPassword()">Reset Password</button>
-    </form>
+    </div>
 
-    <script src="script.js"></script>
+    <script src="/static/script.js"></script>
 </body>
 </html>

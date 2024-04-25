@@ -1,4 +1,4 @@
-# main.py
+# Import necessary modules
 from fastapi import FastAPI, HTTPException
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
 from fastapi.staticfiles import StaticFiles
@@ -9,11 +9,11 @@ app = FastAPI()
 
 # Configuration for SMTP server
 conf = ConnectionConfig(
-    MAIL_USERNAME="kotamaneesha67@gmail.com",
-    MAIL_PASSWORD="qdor lirg pghi znyg",
-    MAIL_FROM="kotamaneesha67@gmail.com",
-    MAIL_PORT=587,  # Example SMTP port
-    MAIL_SERVER="smtp.gmail.com",  # Example SMTP server
+    MAIL_USERNAME="kotabhavishya67@gmail.com",  # Update with your email address
+    MAIL_PASSWORD="shwm pkqb vplb ilar",   # Update with your email password
+    MAIL_FROM="kotabhavishya67@gmail.com",      # Update with your email address
+    MAIL_PORT=587,                         # Example SMTP port (change if necessary)
+    MAIL_SERVER="smtp.gmail.com",          # Example SMTP server for Gmail
     MAIL_STARTTLS=True,
     MAIL_SSL_TLS=False,
     USE_CREDENTIALS=True,
@@ -26,7 +26,7 @@ async def send_otp_for_password_reset(email: str):
     # Generate and send OTP
     otp = ''.join(random.choices(string.digits, k=6))
     otp_storage[email] = otp
-    message = f"<h3> Your OTP for password reset is</h1>: <b> {otp} </b>"
+    message = f"<h3>Your OTP for password reset is:</h1> <b>{otp}</b>"
     message_schema = MessageSchema(
         subject="Password Reset OTP",
         recipients=[email],
@@ -59,7 +59,7 @@ async def reset_password(email: str, otp: str, new_password: str, confirm_passwo
 
 
 async def send_confirmation_email(email: str):
-    subject = "<h2> Password Reset Successful </h2>"
+    subject = "<h2>Password Reset Successful</h2>"
     message = "Your password has been reset successfully."
 
     message_schema = MessageSchema(
@@ -71,4 +71,6 @@ async def send_confirmation_email(email: str):
 
     fm = FastMail(conf)
     await fm.send_message(message=message_schema)
+
+# Mount static files for serving HTML, CSS, and JS
 app.mount("/static", StaticFiles(directory="static"), name="static")
