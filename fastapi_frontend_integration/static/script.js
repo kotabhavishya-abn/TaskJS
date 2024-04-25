@@ -11,11 +11,9 @@ async function sendOTP() {
         
         const data = await response.json();
         if (response.ok) {
-            // Handle successful response
-            alert(data.message); // Display success message
+            alert(data.message); 
         } else {
-            // Handle error response
-            alert(data.detail); // Display error message
+            alert(data.detail); 
         }
     } catch (error) {
         console.error('Error:', error);
@@ -24,9 +22,6 @@ async function sendOTP() {
 }
 
 
-async function resetPassword() {
-    // Similar fetch logic for resetting password
-}
 async function resetPassword() {
     const email = document.getElementById('email').value;
     const otp = document.getElementById('otp').value;
