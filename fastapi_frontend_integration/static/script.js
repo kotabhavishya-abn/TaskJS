@@ -1,4 +1,5 @@
 async function sendOTP() {
+    
     console.log('Sending OTP...');
     const emailInput = document.getElementById('email');
     const email = emailInput.value;
