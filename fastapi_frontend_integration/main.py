@@ -1,4 +1,3 @@
-# Import necessary modules
 from fastapi import FastAPI, HTTPException
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
 from fastapi.staticfiles import StaticFiles
@@ -7,13 +6,12 @@ import string
 
 app = FastAPI()
 
-# Configuration for SMTP server
 conf = ConnectionConfig(
-    MAIL_USERNAME="kotabhavishya67@gmail.com",  # Update with your email address
-    MAIL_PASSWORD="shwm pkqb vplb ilar",   # Update with your email password
-    MAIL_FROM="kotabhavishya67@gmail.com",      # Update with your email address
-    MAIL_PORT=587,                         # Example SMTP port (change if necessary)
-    MAIL_SERVER="smtp.gmail.com",          # Example SMTP server for Gmail
+    MAIL_USERNAME="kotabhavishya67@gmail.com", 
+    MAIL_PASSWORD="shwm pkqb vplb ilar",   
+    MAIL_FROM="kotabhavishya67@gmail.com",      
+    MAIL_PORT=587,                         
+    MAIL_SERVER="smtp.gmail.com",          
     MAIL_STARTTLS=True,
     MAIL_SSL_TLS=False,
     USE_CREDENTIALS=True,
@@ -23,7 +21,7 @@ otp_storage = {}
 
 @app.post("/forgot-password/")
 async def send_otp_for_password_reset(email: str):
-    # Generate and send OTP
+    
     otp = ''.join(random.choices(string.digits, k=6))
     otp_storage[email] = otp
     message = f"<h3>Your OTP for password reset is:</h1> <b>{otp}</b>"
@@ -40,12 +38,11 @@ async def send_otp_for_password_reset(email: str):
 @app.post("/reset-password/")
 async def reset_password(email: str, otp: str, new_password: str, confirm_password: str):
     if email in otp_storage and otp_storage[email] == otp:
-        # Check if new password matches confirm password
+        
         if new_password == confirm_password:
-            # For demonstration purposes, let's just print the updated password
+            
             print("Password for " + email + " updated to: " + new_password)
             
-            # Clear OTP after successful reset
             del otp_storage[email]
 
             # Send confirmation email
@@ -72,5 +69,4 @@ async def send_confirmation_email(email: str):
     fm = FastMail(conf)
     await fm.send_message(message=message_schema)
 
-# Mount static files for serving HTML, CSS, and JS
 app.mount("/static", StaticFiles(directory="static"), name="static")

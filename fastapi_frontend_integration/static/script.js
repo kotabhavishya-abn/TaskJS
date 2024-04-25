@@ -1,20 +1,39 @@
 async function sendOTP() {
-    const email = document.getElementById('email').value;
+    console.log('Sending OTP...');
+    const emailInput = document.getElementById('email');
+    const email = emailInput.value;
+    console.log('Email:', email);
+
+    if (!email) {
+        alert('Please enter your email.');
+        return;
+    }
+
     try {
-        const response = await fetch('http://localhost:8000/forgot-password/', {
+        const response = await fetch('/forgot-password/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ email }),
         });
-        
+
+        console.log('Response status:', response.status);
+        console.log('Response status text:', response.statusText);
+
         const data = await response.json();
+        console.log('Response from server:', data);
         if (response.ok) {
-            alert(data.message); 
+            alert(data.message);
         } else {
-            alert(data.detail); 
+            alert(data.detail);
         }
+
+        // Clear the email input field
+        emailInput.value = '';
+
+        document.getElementById('sendOTPSection').style.display = 'none';
+        document.getElementById('enterOTPSection').style.display = 'block';
     } catch (error) {
         console.error('Error:', error);
         alert('An error occurred. Please try again.');
