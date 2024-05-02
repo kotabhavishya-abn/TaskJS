@@ -146,6 +146,55 @@
 const specialChar = 'It\'s raining';
 console.log(specialChar)
 
+const person = { name: 'hello', age: 30 };
+
+// Using the Object constructor
+const car = new Object();
+car.make = 'Toyota';
+car.model = 'Camry';
+console.log(person.name);
+
+
+
+
+
+// const persons = {
+//     name: 'hello',
+//     age: 30,
+//     address: {
+//         city: 'New York',
+//         country: 'USA'
+//     }
+// }; 
+// console.log(persons['address']['city']);
+
+// persons.email = 'hello@example.com'; // Adding a new property
+// persons.age = 35; // Modifying an existing property
+
+// console.log(persons);
+
+// for (let key in persons) {
+//     console.log(`${key}: ${persons[key]}`);
+// }
+
+
+
+
+// function greet(name) {
+//     console.log(`Hello, ${name}!`);
+// }
+
+// const greet = function(name) {
+//     console.log(`Hello, ${name}!`);
+// };
+
+
+const greet = (name) => {
+    console.log(`Hello, ${name}!`);
+};
+
+greet('Hi');
+
 
 
 
